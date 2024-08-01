@@ -13,7 +13,18 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public Customer create(Customer customer) {
-        // validate the param as needed.
+        // Validate the parameter
+        if (customer == null) {
+            throw new IllegalArgumentException("Customer should not be null.");
+        }
+        if (customer.getName() == null || customer.getName().trim().isEmpty()) {
+            throw new IllegalArgumentException("Customer name should not be null or empty.");
+        }
+        if (customer.getPhoneNumber() == null || customer.getPhoneNumber().trim().isEmpty()) {
+            throw new IllegalArgumentException("Customer phone number should not be null or empty.");
+        }
+
+        // Set a unique ID for the customer and add to storage
         customer.setId(CustomerIdSequencer.nextId()); // 1001
         storage.add(customer);
         return customer;
@@ -51,10 +62,9 @@ public class CustomerDaoImpl implements CustomerDao {
                 storedCustomer.setName(customer.getName());
                 storedCustomer.setPhoneNumber(customer.getPhoneNumber());
                 storedCustomer.setReservation(customer.getReservation());
-                // Exist the loop after updating the customer.
+                // Exit the loop after updating the customer.
                 break;
             }
         }
     }
-
 }
