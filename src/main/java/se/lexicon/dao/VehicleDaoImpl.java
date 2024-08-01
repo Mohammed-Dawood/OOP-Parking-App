@@ -2,10 +2,10 @@ package se.lexicon.dao;
 
 import se.lexicon.model.Vehicle;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class VehicleDaoImpl implements VehicleDao {
 

@@ -1,11 +1,11 @@
 package se.lexicon.dao;
 
-import se.lexicon.dao.sequencer.CustomerIdSequencer;
 import se.lexicon.model.Customer;
+import se.lexicon.dao.sequencer.CustomerIdSequencer;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.ArrayList;
 
 public class CustomerDaoImpl implements CustomerDao {
 
