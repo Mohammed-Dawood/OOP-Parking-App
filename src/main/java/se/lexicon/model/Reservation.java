@@ -1,8 +1,8 @@
 package se.lexicon.model;
 
+import java.util.UUID;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.UUID;
 
 public class Reservation {
     private String id;
